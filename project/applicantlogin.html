@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width,initialscal=1.0">
+    <title>applicant login</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+    <div class="applicant">
+    <button onclick="goback()">Back</button>
+    <img src="logo.png" width="100px">
+    <h1>Login as Applicant</h1>
+    <form id="loginform">
+        <label for="username">Username</label>        
+        <input type="text" id="username" placeholder="Enter your username" required>
+    
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+        <button>Login</button>
+    </form>
+    <p id="errormesssage"class="error-message"></p>
+    </div>
+    <script src="script.js"></script>
+    
+</body>
