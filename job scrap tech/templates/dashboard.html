@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<body class="dashboard-page">
+  <div class="dashboard-container">
+    <h2 class="dashboard-title">Latest 25 Jobs</h2>
+
+    <div class="controls">
+      <button id="scrapeBtn" class="scrape-btn">Scrape Latest Jobs</button>
+    </div>
+
+    <div class="jobs-grid">
+      {% for title, company, location, link in jobs %}
+      <div class="job-card">
+        <h3>{{ title }}</h3>
+        <p class="company">{{ company }}</p>
+        <p class="location">{{ location }}</p>
+        <a href="{{ link }}" target="_blank" class="view-btn">View Job</a>
+      </div>
+      {% endfor %}
+    </div>
+
+    <p class="note">(This dashboard shows latest jobs — click “Scrape” to update!)</p>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="jobs-section">
+  <h2>Latest Scrape Jobs</h2>
+
+  <div class="jobs-card">
+    <table class="job-table">
+      <thead>
+        <tr>
+          <th>Job Title</th>
+          <th>Company</th>
+          <th>Location</th>
+          <th>Apply</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for title, company, location, link in jobs %}
+        <tr>
+          <td>{{ title }}</td>
+          <td>{{ company }}</td>
+          <td>{{ location }}</td>
+          <td><a href="{{ link }}" class="apply-btn" target="_blank">Apply Now</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}
